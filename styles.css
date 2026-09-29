@@ -98,6 +98,10 @@ a {
   color: var(--red);
 }
 
+.main-nav a.nav-active {
+  color: var(--red);
+}
+
 .cart-toggle {
   position: relative;
   background: var(--blue);
@@ -179,14 +183,117 @@ a {
   background: var(--red-dark);
 }
 
-/* Products */
-.products {
+/* Page header (Produtos / Quem Somos / Contacto) */
+.page-header {
+  padding: 48px 0 8px;
+  text-align: center;
+}
+
+.page-header h1 {
+  color: var(--blue);
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+/* Quick categories (home) */
+.quick-categories {
+  padding: 36px 0 0;
+}
+
+.category-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.category-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 10px 18px;
+  border-radius: 999px;
+  transition: all 0.15s ease;
+}
+
+.category-link:hover {
+  border-color: var(--blue);
+  box-shadow: 0 4px 12px rgba(27, 61, 109, 0.1);
+}
+
+/* Company history teaser (home) */
+.history {
   padding: 72px 0;
 }
 
-.products h2,
-.about h2,
-.contact h2 {
+.history-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.history h2 {
+  color: var(--blue);
+  font-size: 1.8rem;
+  margin: 8px 0 16px;
+}
+
+.history p {
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+
+.section-tag {
+  display: inline-block;
+  color: var(--red);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.link-arrow {
+  color: var(--red);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.link-arrow:hover {
+  text-decoration: underline;
+}
+
+/* Products */
+.products {
+  padding: 56px 0;
+}
+
+.promo-section {
+  background: var(--blue-light);
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.section-header h2 {
+  color: var(--blue);
+  margin: 4px 0 0;
+  font-size: 1.7rem;
+}
+
+.products h1 {
   text-align: center;
   color: var(--blue);
   margin-bottom: 8px;
@@ -238,6 +345,7 @@ a {
 }
 
 .product-card {
+  position: relative;
   background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -245,6 +353,28 @@ a {
   display: flex;
   flex-direction: column;
   transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.badge-sale {
+  background: var(--red);
+  color: #fff;
+}
+
+.badge-bestseller {
+  background: var(--blue);
+  color: #fff;
 }
 
 .product-card[hidden] {
@@ -300,6 +430,16 @@ a {
   color: var(--blue);
 }
 
+.price-old {
+  color: var(--muted);
+  text-decoration: line-through;
+  font-size: 0.85rem;
+}
+
+.product-price.sale {
+  color: var(--red);
+}
+
 .add-btn {
   background: var(--red);
   color: #fff;
@@ -321,22 +461,27 @@ a {
   cursor: default;
 }
 
-/* About */
-.about {
-  background: #fff;
-  padding: 64px 0;
+/* About page */
+.about-page {
+  padding: 40px 0 72px;
 }
 
-.about p {
+.about-content {
   max-width: 700px;
   margin: 0 auto;
   text-align: center;
   color: var(--muted);
 }
 
-/* Contact */
-.contact {
-  padding: 64px 0;
+.placeholder-note {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #9aa2ae;
+}
+
+/* Contact page */
+.contact-page {
+  padding: 40px 0 72px;
 }
 
 .contact-grid {
@@ -347,7 +492,7 @@ a {
   text-align: center;
 }
 
-.contact a {
+.contact-grid a {
   color: var(--red);
   text-decoration: none;
 }
