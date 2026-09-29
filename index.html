@@ -3,16 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manuel da Silva Henriques - Representações, Lda.</title>
+  <title>Manuel da Silva Henriques - Representações, Lda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#" class="logo">
-        <span class="logo-name">Manuel da Silva Henriques</span>
-        <span class="logo-sub">representações, Lda.</span>
+      <a href="#inicio" class="logo">
+        <span class="logo-drop">💧</span>
+        <span class="logo-text">
+          <span class="logo-name">Manuel da Silva Henriques</span>
+          <span class="logo-sub">representações, Lda.</span>
+        </span>
       </a>
       <nav class="main-nav">
         <a href="#inicio">Início</a>
@@ -20,46 +26,28 @@
         <a href="#sobre">Quem Somos</a>
         <a href="#contacto">Contacto</a>
       </nav>
+      <button id="cart-toggle" class="cart-toggle" aria-label="Abrir carrinho">
+        🛒 <span id="cart-count" class="cart-badge" hidden>0</span>
+      </button>
     </div>
   </header>
 
   <section id="inicio" class="hero">
-    <div class="container">
-      <h1>Armazenistas &amp; Grossistas</h1>
-      <p>Combustíveis, metais e materiais de construção. Ferragens, ferramentas manuais e artigos para canalizações e aquecimento.</p>
+    <div class="container hero-inner">
+      <span class="hero-tag">Armazenistas &amp; Grossistas</span>
+      <h1>Materiais e ferramentas para quem constrói</h1>
+      <p>Combustíveis, metais e materiais de construção, ferragens, ferramentas manuais e artigos para canalizações, aquecimento e rega de jardim.</p>
+      <a href="#produtos" class="cta-btn">Ver Produtos</a>
     </div>
   </section>
 
   <section id="produtos" class="products">
     <div class="container">
       <h2>Os Nossos Produtos</h2>
-      <div class="product-grid">
-        <div class="product-card">
-          <h3>Combustíveis</h3>
-          <p>Fornecimento de combustíveis para empresas e particulares.</p>
-        </div>
-        <div class="product-card">
-          <h3>Metais e Materiais de Construção</h3>
-          <p>Vasta gama de materiais para obras e construção civil.</p>
-        </div>
-        <div class="product-card">
-          <h3>Ferragens</h3>
-          <p>Ferragens de qualidade para todo o tipo de necessidades.</p>
-        </div>
-        <div class="product-card">
-          <h3>Ferramentas Manuais</h3>
-          <p>Ferramentas para profissionais e uso doméstico.</p>
-        </div>
-        <div class="product-card">
-          <h3>Canalizações e Aquecimento</h3>
-          <p>Artigos e acessórios para canalizações e sistemas de aquecimento.</p>
-        </div>
-        <div class="product-card">
-          <h3>Rega de Jardim</h3>
-          <p>Soluções e equipamento para rega de jardins.</p>
-        </div>
-      </div>
-      <p class="products-note">Catálogo completo brevemente disponível.</p>
+      <p class="section-subtitle">Catálogo de exemplo — produtos e preços a confirmar com a empresa.</p>
+
+      <div id="category-filters" class="category-filters"></div>
+      <div id="product-grid" class="product-grid"></div>
     </div>
   </section>
 
@@ -73,9 +61,11 @@
   <section id="contacto" class="contact">
     <div class="container">
       <h2>Contacto</h2>
-      <p>Email: <a href="mailto:geral@mshenriques.com">geral@mshenriques.com</a></p>
-      <p>Telefone: (a preencher)</p>
-      <p>Morada: (a preencher)</p>
+      <div class="contact-grid">
+        <p>📧 <a href="mailto:geral@mshenriques.com">geral@mshenriques.com</a></p>
+        <p>📞 (a preencher)</p>
+        <p>📍 (a preencher)</p>
+      </div>
     </div>
   </section>
 
@@ -85,6 +75,27 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Carrinho -->
+  <div id="cart-overlay" class="cart-overlay"></div>
+  <aside id="cart-panel" class="cart-panel">
+    <div class="cart-header">
+      <h2>O Seu Carrinho</h2>
+      <button id="cart-close" aria-label="Fechar carrinho">✕</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <p id="cart-empty" class="cart-empty">O seu carrinho está vazio.</p>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Total</span>
+        <strong id="cart-total">0,00 €</strong>
+      </div>
+      <button id="send-order" class="send-order-btn">Enviar Pedido por Email</button>
+      <p class="cart-note">Sem pagamento online por agora — o pedido é enviado por email e a empresa entra em contacto.</p>
+    </div>
+  </aside>
+
+  <script src="products.js"></script>
+  <script src="cart.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
