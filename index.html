@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="theme.js"></script>
 </head>
 <body>
 
@@ -26,9 +27,13 @@
         <a href="sobre.html">Quem Somos</a>
         <a href="contacto.html">Contacto</a>
       </nav>
-      <button id="cart-toggle" class="cart-toggle" aria-label="Abrir carrinho">
-        🛒 <span id="cart-count" class="cart-badge" hidden>0</span>
-      </button>
+      <div class="header-actions">
+        <button id="palette-toggle" class="theme-btn" aria-label="Mudar cores">🎨</button>
+        <button id="mode-toggle" class="theme-btn" aria-label="Modo escuro">🌙</button>
+        <button id="cart-toggle" class="cart-toggle" aria-label="Abrir carrinho">
+          🛒 <span id="cart-count" class="cart-badge" hidden>0</span>
+        </button>
+      </div>
     </div>
   </header>
 

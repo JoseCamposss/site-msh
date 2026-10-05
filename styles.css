@@ -4,11 +4,50 @@
   --primary-light: #e4f2ea;
   --accent: #00843d;
   --accent-dark: #00662f;
+  --hero-glow: #0b8a52;
+  --shadow: rgba(0, 89, 58, 0.12);
+  --heading: var(--primary);
+  --accent-text: var(--accent);
   --bg: #f7f8fa;
+  --surface: #fff;
   --text: #1f2937;
   --muted: #667085;
   --border: #e5e7eb;
   --radius: 10px;
+}
+
+:root[data-palette="msh"] {
+  --primary: #1b3d6d;
+  --primary-dark: #0e2440;
+  --primary-light: #eaf0f8;
+  --accent: #c0392b;
+  --accent-dark: #9c2c20;
+  --hero-glow: #2a5389;
+  --shadow: rgba(27, 61, 109, 0.12);
+}
+
+:root[data-mode="dark"] {
+  color-scheme: dark;
+  --bg: #0f1512;
+  --surface: #18211c;
+  --text: #e6ece8;
+  --muted: #9aa8a0;
+  --border: #2a3730;
+  --primary-light: #1d2b24;
+  --heading: #7fd8a8;
+  --accent-text: #4cd18a;
+  --shadow: rgba(0, 0, 0, 0.45);
+}
+
+:root[data-mode="dark"][data-palette="msh"] {
+  --bg: #0e141c;
+  --surface: #18212d;
+  --text: #e6eaf0;
+  --muted: #9aa5b5;
+  --border: #2a3646;
+  --primary-light: #1c2938;
+  --heading: #9db8e0;
+  --accent-text: #ff7a6b;
 }
 
 * {
@@ -39,7 +78,7 @@ a {
 
 /* Header */
 .site-header {
-  background: #fff;
+  background: var(--surface);
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
@@ -59,7 +98,7 @@ a {
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: var(--primary);
+  color: var(--heading);
 }
 
 .logo-drop {
@@ -79,7 +118,7 @@ a {
 
 .logo-sub {
   font-size: 0.78rem;
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .main-nav {
@@ -89,17 +128,17 @@ a {
 
 .main-nav a {
   text-decoration: none;
-  color: var(--primary);
+  color: var(--heading);
   font-weight: 500;
   font-size: 0.95rem;
 }
 
 .main-nav a:hover {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .main-nav a.nav-active {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .cart-toggle {
@@ -135,7 +174,7 @@ a {
 
 /* Hero */
 .hero {
-  background: radial-gradient(circle at top right, #0b8a52 0%, var(--primary) 45%, var(--primary-dark) 100%);
+  background: radial-gradient(circle at top right, var(--hero-glow) 0%, var(--primary) 45%, var(--primary-dark) 100%);
   color: #fff;
   padding: 96px 0 88px;
 }
@@ -190,7 +229,7 @@ a {
 }
 
 .page-header h1 {
-  color: var(--primary);
+  color: var(--heading);
   font-size: 2rem;
   margin-bottom: 6px;
 }
@@ -211,9 +250,9 @@ a {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #fff;
+  background: var(--surface);
   border: 1px solid var(--border);
-  color: var(--primary);
+  color: var(--heading);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9rem;
@@ -224,7 +263,7 @@ a {
 
 .category-link:hover {
   border-color: var(--primary);
-  box-shadow: 0 4px 12px rgba(0, 89, 58, 0.12);
+  box-shadow: 0 4px 12px var(--shadow);
 }
 
 /* Company history teaser (home) */
@@ -239,7 +278,7 @@ a {
 }
 
 .history h2 {
-  color: var(--primary);
+  color: var(--heading);
   font-size: 1.8rem;
   margin: 8px 0 16px;
 }
@@ -251,7 +290,7 @@ a {
 
 .section-tag {
   display: inline-block;
-  color: var(--accent);
+  color: var(--accent-text);
   font-weight: 600;
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -259,7 +298,7 @@ a {
 }
 
 .link-arrow {
-  color: var(--accent);
+  color: var(--accent-text);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.92rem;
@@ -288,14 +327,14 @@ a {
 }
 
 .section-header h2 {
-  color: var(--primary);
+  color: var(--heading);
   margin: 4px 0 0;
   font-size: 1.7rem;
 }
 
 .products h1 {
   text-align: center;
-  color: var(--primary);
+  color: var(--heading);
   margin-bottom: 8px;
   font-size: 1.9rem;
 }
@@ -317,9 +356,9 @@ a {
 }
 
 .filter-btn {
-  background: #fff;
+  background: var(--surface);
   border: 1px solid var(--border);
-  color: var(--primary);
+  color: var(--heading);
   padding: 8px 16px;
   border-radius: 999px;
   font-size: 0.88rem;
@@ -346,7 +385,7 @@ a {
 
 .product-card {
   position: relative;
-  background: #fff;
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 22px;
@@ -382,7 +421,7 @@ a {
 }
 
 .product-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 89, 58, 0.12);
+  box-shadow: 0 8px 24px var(--shadow);
   transform: translateY(-2px);
 }
 
@@ -400,14 +439,14 @@ a {
 
 .product-category {
   font-size: 0.75rem;
-  color: var(--accent);
+  color: var(--accent-text);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.3px;
 }
 
 .product-card h3 {
-  color: var(--primary);
+  color: var(--heading);
   margin: 6px 0 4px;
   font-size: 1.05rem;
 }
@@ -427,7 +466,7 @@ a {
 
 .product-price {
   font-weight: 700;
-  color: var(--primary);
+  color: var(--heading);
 }
 
 .price-old {
@@ -437,7 +476,7 @@ a {
 }
 
 .product-price.sale {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .add-btn {
@@ -493,7 +532,7 @@ a {
 }
 
 .contact-grid a {
-  color: var(--accent);
+  color: var(--accent-text);
   text-decoration: none;
 }
 
@@ -529,7 +568,7 @@ a {
   height: 100%;
   width: 380px;
   max-width: 90vw;
-  background: #fff;
+  background: var(--surface);
   box-shadow: -8px 0 24px rgba(0, 0, 0, 0.15);
   transform: translateX(100%);
   transition: transform 0.25s ease;
@@ -552,7 +591,7 @@ a {
 
 .cart-header h2 {
   margin: 0;
-  color: var(--primary);
+  color: var(--heading);
   font-size: 1.2rem;
 }
 
@@ -597,10 +636,11 @@ a {
 }
 
 .qty-btn {
+  color: var(--text);
   width: 26px;
   height: 26px;
   border: 1px solid var(--border);
-  background: #fff;
+  background: var(--surface);
   border-radius: 6px;
   cursor: pointer;
   font-size: 0.95rem;
@@ -621,7 +661,7 @@ a {
 }
 
 .remove-btn:hover {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .cart-empty {
@@ -673,4 +713,25 @@ a {
   .hero h1 {
     font-size: 2rem;
   }
+}
+
+/* Theme buttons */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 9px 11px;
+  font-size: 1.05rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.theme-btn:hover {
+  border-color: var(--primary);
 }
